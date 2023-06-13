@@ -4,7 +4,10 @@ const pageContainer = document.getElementById('salesNumbers');
 let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 let allCities = [];
 let table = document.createElement('table');
+pageContainer.appendChild(table);
+let thead = document.createElement('thead');
 let tbody = document.createElement('tbody');
+let tfoot = document.createElement('tfoot');
 function totalCookies(totalArr) {
   let sum = 0;
   for (let i = 0; i < totalArr.length; i++) {
@@ -14,9 +17,8 @@ function totalCookies(totalArr) {
 }
 function renderTableHeader() {
   let tr = document.createElement('tr');
-  pageContainer.appendChild(table);
-  table.appendChild(tbody);
-  tbody.appendChild(tr);
+  table.appendChild(thead);
+  thead.appendChild(tr);
   let topLeft = document.createElement('th');
   topLeft.textContent = 'City';
   tr.appendChild(topLeft);
@@ -26,8 +28,12 @@ function renderTableHeader() {
     header.textContent = x;
     tr.appendChild(header);
   }
+  let cityTotal = document.createElement('th');
+  cityTotal.textContent = 'Daily Location Total';
+  tr.appendChild(cityTotal);
 }
 function renderTableData(city) {
+  table.appendChild(tbody);
   let newRow = document.createElement('tr');
   tbody.appendChild(newRow);
   let x = city;
@@ -41,23 +47,34 @@ function renderTableData(city) {
     data.textContent = y;
     newRow.appendChild(data);
   }
+  let totalSales = totalCookies(city.sales);
+  let total = document.createElement('td');
+  total.textContent = totalSales;
+  newRow.appendChild(total);
 }
 function renderTotalRow(cityArr) {
+  table.appendChild(tfoot);
   let totalRow = document.createElement('tr');
-  tbody.appendChild(totalRow);
+  tfoot.appendChild(totalRow);
   let total = document.createElement('th');
   total.textContent = 'Total:';
   totalRow.appendChild(total);
+  let grandTotalArr = [];
   for (let i = 0; i < hours.length; i++) {
     let hourlyTotals = [];
     for (let j = 0; j < cityArr.length; j++) {
       hourlyTotals.push(cityArr[j].sales[i]);
+      grandTotalArr.push(cityArr[j].sales[i]);
     }
     let totalHour = totalCookies(hourlyTotals);
     let totalData = document.createElement('td');
     totalData.textContent = totalHour;
     totalRow.appendChild(totalData);
   }
+  let grandTotal = totalCookies(grandTotalArr);
+  let grandTotalData = document.createElement('td');
+  grandTotalData.textContent = grandTotal;
+  totalRow.appendChild(grandTotalData);
 }
 
 function City(name, min, max, avg) {
