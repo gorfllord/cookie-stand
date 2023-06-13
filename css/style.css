@@ -1,3 +1,10 @@
 * {
   box-sizing: border-width;
 }
+table {
+  border-width: 1px;
+  border-color: cornflowerblue;
+}
+body {
+  font-family: "roboto", arial, sans-serif;
+}
