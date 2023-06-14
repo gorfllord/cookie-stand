@@ -2,25 +2,29 @@
   box-sizing: border-width;
 }
 body {
-  font-family: "roboto", arial, sans-serif;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color:azure;
 }
 table {
-  table-layout: fixed;
+  table-layout: flex;
   width: 80%;
   border-collapse: collapse;
   border: 3px solid seagreen;
-  margin: 2rem;
+  margin: auto;
+  margin-top: 2rem;
 }
 thead {
   text-align: center;
   background-color: rgb(240, 190, 185);
 }
 td {
-  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+  text-align: right;
   border: 1px solid black;
   height: 1rem;
 }
 th {
+  font-family: "roboto", arial, sans-serif;
   font-weight: bold;
   border: 1px solid black;
 }
