@@ -20,7 +20,7 @@ function renderTableHeader() {
   table.appendChild(thead);
   thead.appendChild(tr);
   let topLeft = document.createElement('th');
-  topLeft.textContent = 'City';
+  topLeft.textContent = '';
   tr.appendChild(topLeft);
   for (let i = 0; i < hours.length; i++){
     let x = hours[i];

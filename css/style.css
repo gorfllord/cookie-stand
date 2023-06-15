@@ -2,25 +2,162 @@
   box-sizing: border-width;
 }
 body {
-  font-family: "roboto", arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: Georgia, "Times New Roman", serif;
+  background-color:azure;
+}
+header {
+  position: fixed;
+  display: flex;
+  margin: auto;
+  padding: 0 20px;
+  width: 100%;
+  background-color: rgb(93, 169, 240);
+}
+figcaption {
+  font-family: "roboto", helvetica, sans-serif;
+  font-weight: bold;
+  color: navy;
+  font-size: large;
+  text-align: center;
+  padding-bottom: 5px;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  width: 960px;
+  margin: auto;
+  justify-content: center;
+}
+nav img {
+  height: 60px;
+  padding: 5px;
+}
+nav ul {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  width: 760px;
+}
+nav ul li {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: 1rem;
+  font-size: large;
+  text-decoration: none;
+  color: navy;
+}
+nav a {
+  color: inherit;
+  text-decoration: inherit;
+}
+main {
+  padding: 100px 0;
+}
+section {
+  display: flex;
+  margin: auto;
+  width: 1000px;
+  padding-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+section img {
+  display: flex;
+  max-width: 700px;
+}
+h1 {
+  font-weight: bold;
+  text-align: center;
+  padding: 30px;
+  font-size: large;
+}
+#frosted-cookie {
+  height: 250px;
+  padding: 30px 0;
+}
+ul {
+  list-style: disc;
+}
+li {
+  padding: 5px;
+}
+article {
+  display: flex;
+  width: 450px;
+  height: 400px;
+  flex-direction: column;
+}
+h3 {
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+div {
+  display: flex;  
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+div p {
+  padding: 5px;
+}
+#buttons {
+  display: flex;
+  overflow: visible;
+  justify-content: space-between;
+}
+button {
+  border-radius: 0.5rem;
+  width: 200px;
+  height: 30px;
+  background-color: rgb(179, 227, 245);
+  transition: 350ms;
+  padding: 5px;
+  font-size: large;
+}
+button:hover {
+  background-color: salmon;
+  color: black;
+  font-weight: bold;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+  width: 100%;
+  height: 70px;
+  background-color: rgb(93, 169, 240);
+}
+footer p {
+  display: flex;
+  margin: auto;
 }
 table {
-  table-layout: fixed;
+  table-layout: flex;
   width: 80%;
   border-collapse: collapse;
   border: 3px solid seagreen;
-  margin: 2rem;
+  margin: auto;
+  margin-top: 1rem;
 }
 thead {
   text-align: center;
   background-color: rgb(240, 190, 185);
 }
 td {
-  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+  text-align: right;
   border: 1px solid black;
   height: 1rem;
+  padding:3px
 }
 th {
+  font-family: "roboto", arial, sans-serif;
   font-weight: bold;
   border: 1px solid black;
 }
