@@ -8,6 +8,7 @@ pageContainer.appendChild(table);
 let thead = document.createElement('thead');
 let tbody = document.createElement('tbody');
 let tfoot = document.createElement('tfoot');
+
 function totalCookies(totalArr) {
   let sum = 0;
   for (let i = 0; i < totalArr.length; i++) {
@@ -53,6 +54,7 @@ function renderTableData(city) {
   newRow.appendChild(total);
 }
 function renderTotalRow(cityArr) {
+  tfoot.innerHTML = '';
   table.appendChild(tfoot);
   let totalRow = document.createElement('tr');
   tfoot.appendChild(totalRow);
@@ -76,7 +78,6 @@ function renderTotalRow(cityArr) {
   grandTotalData.textContent = grandTotal;
   totalRow.appendChild(grandTotalData);
 }
-
 function City(name, min, max, avg) {
   this.name = name,
   this.min = min,
@@ -116,6 +117,21 @@ function City(name, min, max, avg) {
   allCities.push(this);
 }
 
+let form = document.getElementById('form');
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityName = event.target.cityName.value;
+  let cityMin = parseInt(event.target.cityMin.value);
+  let cityMax = parseInt(event.target.cityMax.value);
+  let cityAvg = parseInt(event.target.cityAvg.value);
+  let newCity = new City(cityName, cityMin, cityMax, cityAvg);
+  renderTableData(newCity);
+  renderTotalRow(allCities);
+}
+
+form.addEventListener('submit', handleSubmit);
+
 let seattle = new City('Seattle', 23, 65, 6.3);
 let tokyo = new City('Tokyo', 3, 24, 1.2);
 let dubai = new City('Dubai', 11, 38, 3.7);
@@ -129,9 +145,3 @@ renderTableData(dubai);
 renderTableData(paris);
 renderTableData(lima);
 renderTotalRow(allCities);
-
-// seattle.render();
-// tokyo.render();
-// dubai.render();
-// paris.render();
-// lima.render();

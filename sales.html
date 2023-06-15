@@ -30,6 +30,22 @@
     <section id="salesNumbers">
       
     </section>
+    <section id="salesInput">
+      <form id="form">
+        <fieldset>
+          <legend>Add A City</legend>
+          <label for="cityName">City Name</label>
+          <input type="text" name="City Name" id="cityName" required>
+          <label for="cityMin">Minimum Customers per Hour</label>
+          <input type="number" name="Minimum Customers per Hour" id="cityMin" required>
+          <label for="cityMax">Maximum Customers per Hour</label>
+          <input type="number" name="Maximum Customers per Hour" id="cityMax" required>
+          <label for="cityAvg">Average Sales per Hour</label>
+          <input type="number" name="Average Sales per Hour" id="cityAvg" step="0.1" required>
+          <button type="submit" id="formSubmit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
   </main>
   <footer>
     <p>&copy; Salmon Cookies, LLC</p>
