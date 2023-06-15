@@ -178,3 +178,25 @@ tfoot {
   border: 2px solid black;
   background-color: rgb(240, 190, 185);
 }
+#salesInput {
+  display: flex;
+  flex-direction: column;
+}
+h2 {
+  font-weight: bold;
+  font-size: large;
+}
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+fieldset * {
+  padding: 10px;
+}
+input {
+  height: 0.5rem;
+}
+#formSubmit {
+  padding: 10px;
+  margin: auto;
+}
