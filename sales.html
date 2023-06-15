@@ -31,19 +31,19 @@
       
     </section>
     <section id="salesInput">
-      <h2>Input New Sales Data</h2>
-      <form>
+      <form id="form">
         <fieldset>
+          <legend>Add A City</legend>
           <label for="cityName">City Name</label>
           <input type="text" name="City Name" id="cityName" required>
-          <label for="cityMin">Minimum Customers</label>
-          <input type="number" name="Minimum Customers" id="cityMin">
-          <label for="cityMax">Maximum Customers</label>
-          <input type="number" name="Maximum Customers" id="cityMax">
+          <label for="cityMin">Minimum Customers per Hour</label>
+          <input type="number" name="Minimum Customers per Hour" id="cityMin" required>
+          <label for="cityMax">Maximum Customers per Hour</label>
+          <input type="number" name="Maximum Customers per Hour" id="cityMax" required>
           <label for="cityAvg">Average Sales per Hour</label>
-          <input type="number" name="Average Sales per Hour" id="cityAvg">
+          <input type="number" name="Average Sales per Hour" id="cityAvg" step="0.1" required>
+          <button type="submit" id="formSubmit">Submit</button>
         </fieldset>
-        <button type="submit" id="formSubmit">Submit</button>
       </form>
     </section>
   </main>
