@@ -9,6 +9,7 @@ Build an app that estimates cookie sales by location and displays them in a tabl
 ### Links and Resources
 
 * [submission PR](https://github.com/gorfllord/cookie-stand/pull/3)
+* [live link](https://gorfllord.github.io/cookie-stand)
 
 ### Lighthouse Accessibility Report Score
 
